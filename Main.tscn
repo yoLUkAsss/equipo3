@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cjad1e317i0v1"]
+
+[node name="Node2D" type="Node"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -18.5
+offset_right = 81.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hola que tal estan?"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 477.0
+offset_top = 62.0
+offset_right = 677.0
+offset_bottom = 262.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 804.0
+offset_top = 63.0
+offset_right = 1004.0
+offset_bottom = 263.0
+
+[node name="Panel3" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.1
+anchor_bottom = 0.1
+offset_right = 200.0
+offset_bottom = 200.0

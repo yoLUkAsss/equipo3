@@ -2,16 +2,19 @@ extends Node
 
 @onready var alimento_arroz = $"Container/Alimento-arroz"
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var held_object = null
+var is_dragging = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _on_alimentoarroz_clicked(object):
+	#if !held_object:
+		#held_object = object
+		#held_object.pickup()
+#
+#func _unhandled_input(event):
+	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		#if held_object and !event.pressed:
+			#held_object.drop(Input.get_action_strength("BUTTON_LEFT"))
+			#held_object = null
 
 
-func _on_alimentoarroz_pressed():
-	pass

@@ -1,14 +1,29 @@
-extends Sprite2D
+extends RigidBody2D
 
-var dragging = false
-var ofset = Vector2()
+signal clicked
 
-#func _input(event):
+var held = false
+
+#func _input_event(viewport, event, shape_idx):
 	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_LEFT:
-			#if event.pressed:
-				#var mouse_pos = get_global_mouse_position()
-				#if rect_global_rect_contains_point(Rect2(position, texture.get_size()), mouse_pos):
-					#dragging = true
-					#offset = mouse_pos - position
-					#set_process_input(true)
+		#if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
+			#emit_signal("clicked", self)
+#
+#func _physics_process(delta):
+	#if held:
+		#global_transform.origin = get_global_mouse_position()
+#
+#func pickup():
+	#if held:
+		#return
+	#RigidBody2D.FREEZE_MODE_STATIC
+	#held = true
+#
+#func drop(impulse=Vector2.ZERO):
+	#if held:
+		#RigidBody2D.DISABLE_MODE_KEEP_ACTIVE
+		#apply_central_impulse(impulse)
+		#held = false
+
+
+

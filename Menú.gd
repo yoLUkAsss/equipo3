@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-var elementos = []
-
 func _process(delta):
 	if global.is_dragging:
 		visible = true
@@ -10,4 +8,4 @@ func _process(delta):
 
 
 func _on_mouse_entered():
-	print('entrando plataforma')
+	print('entrando menu')
